@@ -12,10 +12,11 @@
   </head>
   <body>
     <!-- HEADER START -->
-    <header>
+    <header class="z-10 bg-white">
       <!-- DESKTOP HEADER -->
-      <div class="hidden lg:flex items-center h-16 border-b">
-        <div>
+      <div class="hidden lg:flex items-center justify-between h-16 border-b">
+        <!-- LOGO AND SEARCH BAR -->
+        <div class="flex items-center w-1/2">
           <!-- DESKTOP LOGO -->
           <div class="px-6">
             <a href="#">
@@ -33,56 +34,261 @@
               </svg>
             </a>
           </div>
-        </div>
-        <!-- SEARCH BAR -->
-        <div class="h-10 max-w-lg w-full flex items-center">
-          <form class="flex h-full w-full shadow-md">
-            <div
-              class="flex-1 relative after:absolute after:h-3/5 after:w-[1px] after:bg-[#e9eced] after:top-1/2 after:-translate-y-1/2 after:right-0 after:z-10"
-            >
-              <input
-                type="text"
-                placeholder="What’s on your to-do list?"
-                class="pl-6 pr-3 whitespace-nowrap overflow-hidden text-ellipsis w-full h-full border-y border-l focus:outline-none rounded-tl rounded-bl font-bold text-black placeholder:font-normal"
-              />
-            </div>
-            <div class="max-w-[140px] relative">
-              <input
-                type="text"
-                placeholder="Zip code"
-                class="w-full h-full whitespace-nowrap overflow-hidden text-ellipsis border-y pl-8 focus:outline-none font-bold text-black placeholder:font-normal"
-              />
-              <span class="absolute left-2 top-1/2 -translate-y-1/2">
+
+          <!-- SEARCH BAR -->
+          <div class="h-10 max-w-lg w-full flex items-center">
+            <form class="flex h-full w-full shadow-md">
+              <div
+                class="flex-1 relative after:absolute after:h-3/5 after:w-[1px] after:bg-[#e9eced] after:top-1/2 after:-translate-y-1/2 after:right-0 after:z-10"
+              >
+                <input
+                  type="text"
+                  placeholder="What’s on your to-do list?"
+                  class="pl-6 pr-3 truncate w-full h-full border-y border-l focus:outline-none rounded-tl rounded-bl font-bold text-black placeholder:font-normal"
+                />
+              </div>
+              <div class="max-w-[140px] relative">
+                <input
+                  type="text"
+                  placeholder="Zip code"
+                  class="w-full h-full truncate border-y pl-8 focus:outline-none font-bold text-black placeholder:font-normal"
+                />
+                <span class="absolute left-2 top-1/2 -translate-y-1/2">
+                  <svg
+                    height="18"
+                    width="18"
+                    class="fill-[#d3d4d5]"
+                    viewBox="0 0 18 18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.002 7.25c0 3.248 4.342 7.756 5.23 8.825l.769.925.769-.926c.888-1.068 5.234-5.553 5.234-8.824C15.004 4.145 13 1 9.001 1c-3.999 0-6 3.145-6 6.25zm1.994 0C4.995 5.135 6.175 3 9 3s4.002 2.135 4.002 4.25c0 1.777-2.177 4.248-4.002 6.59C7.1 11.4 4.996 9.021 4.996 7.25zM8.909 5.5c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+              <button
+                type="submit"
+                class="outline-none py-2 px-5 bg-[#009fd9] rounded-tr rounded-br"
+              >
                 <svg
                   height="18"
                   width="18"
-                  class="fill-[#d3d4d5]"
+                  class="fill-white"
                   viewBox="0 0 18 18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M3.002 7.25c0 3.248 4.342 7.756 5.23 8.825l.769.925.769-.926c.888-1.068 5.234-5.553 5.234-8.824C15.004 4.145 13 1 9.001 1c-3.999 0-6 3.145-6 6.25zm1.994 0C4.995 5.135 6.175 3 9 3s4.002 2.135 4.002 4.25c0 1.777-2.177 4.248-4.002 6.59C7.1 11.4 4.996 9.021 4.996 7.25zM8.909 5.5c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"
+                    d="M7.5 2C10.532 2 13 4.467 13 7.5c0 1.156-.36 2.229-.972 3.114l3.679 3.679a.999.999 0 11-1.414 1.414l-3.68-3.679A5.46 5.46 0 017.5 13 5.506 5.506 0 012 7.5C2 4.467 4.468 2 7.5 2zm0 2C5.57 4 4 5.57 4 7.5S5.57 11 7.5 11 11 9.43 11 7.5 9.43 4 7.5 4z"
                   ></path>
                 </svg>
-              </span>
-            </div>
-            <button
-              type="submit"
-              class="outline-none py-2 px-5 bg-[#009fd9] rounded-tr rounded-br"
-            >
-              <svg
-                height="18"
-                width="18"
-                class="fill-white"
-                viewBox="0 0 18 18"
-                xmlns="http://www.w3.org/2000/svg"
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- NAVIGATION MENU -->
+        <div class="flex items-center h-full w-1/2 justify-end">
+          <div class="flex items-end h-full">
+            <ul class="flex h-full items-center">
+              <li class="h-full flex items-center px-4 flex-1">
+                <a
+                  href="#"
+                  class="py-2 bg px-6 font-bold rounded bg-[#009fd9] text-sm h-10 text-white"
+                  >Join as a pro</a
+                >
+              </li>
+              <li class="h-full">
+                <a
+                  href="#"
+                  class="h-full flex text-[#676d73] tracking-wide text-sm items-center px-4 border-b-2 border-transparent hover:border-b-2 hover:border-[#d3d4d5]"
+                  >Membership</a
+                >
+              </li>
+              <li class="h-full">
+                <a
+                  href="#"
+                  class="h-full flex text-[#676d73] tracking-wide text-sm items-center px-4 border-b-2 border-transparent hover:border-b-2 hover:border-[#d3d4d5]"
+                  >Explore</a
+                >
+              </li>
+              <li class="h-full">
+                <a
+                  href="#"
+                  class="h-full flex text-[#676d73] tracking-wide text-sm items-center px-4 border-b-2 border-transparent hover:border-b-2 hover:border-[#d3d4d5]"
+                  >Sign up</a
+                >
+              </li>
+              <li class="h-full">
+                <a
+                  href="#"
+                  class="h-full flex text-[#676d73] tracking-wide text-sm items-center pl-4 pr-6 border-b-2 border-transparent hover:border-b-2 hover:border-[#d3d4d5]"
+                  >Log in</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- MOBILE HEADER -->
+      <div
+        class="flex lg:hidden items-center justify-between h-16 border-b pr-6"
+      >
+        <!-- LOGO AND SEARCH BAR -->
+        <div
+          class="flex items-center h-full w-full relative"
+          x-data="{isDropdownOpen: false}"
+        >
+          <!-- MOBILE LOGO / MENU LOGO -->
+          <div class="px-3 h-full flex">
+            <div class="w-full h-full flex items-center justify-center">
+              <button
+                class="_2gd24_U0YD-0g0Z5kwOYTx flex items-center border-none outline-none"
+                @click="isDropdownOpen = !isDropdownOpen"
               >
-                <path
-                  d="M7.5 2C10.532 2 13 4.467 13 7.5c0 1.156-.36 2.229-.972 3.114l3.679 3.679a.999.999 0 11-1.414 1.414l-3.68-3.679A5.46 5.46 0 017.5 13 5.506 5.506 0 012 7.5C2 4.467 4.468 2 7.5 2zm0 2C5.57 4 4 5.57 4 7.5S5.57 11 7.5 11 11 9.43 11 7.5 9.43 4 7.5 4z"
-                ></path>
-              </svg>
-            </button>
-          </form>
+                <svg
+                  class="blue block"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 16 16"
+                  fill="#009fd9"
+                >
+                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0"></path>
+                  <path
+                    fill="#FFF"
+                    d="M8.973 10.385a3.71 3.71 0 0 1-.564 1.957L8 13l-.409-.658a3.704 3.704 0 0 1-.564-1.957v-3.14C7.51 6.62 8.231 6.4 8.973 6.4v3.985zM4 5.69V4h8v1.69H4z"
+                  ></path>
+                </svg>
+                <svg
+                  class="ml-1 transition-transform duration-300"
+                  :class="{'rotate-180' : isDropdownOpen}"
+                  height="18"
+                  width="18"
+                  fill="#676d73"
+                  viewBox="0 0 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.646 6.764L9 13 3.311 6.725a1 1 0 011.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 011 1c0 .306-.151.537-.354.764z"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="absolute -z-10 -translate-y-full w-full flex flex-col left-0 top-full mt-0.5 bg-white border-r border-[#e9eced] transition-transform duration-300"
+                :class="{'translate-y-0' : isDropdownOpen}"
+              >
+                <div class="flex flex-column overflow-y-auto">
+                  <ul class="text-base flex flex-col h-auto w-full">
+                    <li class="w-full">
+                      <a
+                        href="#"
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="w-full">
+                      <a
+                        href="#"
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
+                        ><div class="flex items-center">
+                          Explore
+                          <svg
+                            class="h2"
+                            height="28"
+                            width="28"
+                            fill="currentColor"
+                            viewBox="0 0 28 28"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.764 21.646L19 14l-8.275-7.689a1 1 0 00-1.482 1.342L16 14l-6.699 6.285c-.187.2-.301.435-.301.715a1 1 0 001 1c.306 0 .537-.151.764-.354z"
+                            ></path>
+                          </svg></div
+                      ></a>
+                    </li>
+                    <li class="w-full">
+                      <a
+                        href="#"
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
+                        >Join as a pro</a
+                      >
+                    </li>
+                    <li class="w-full">
+                      <a
+                        href="#"
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
+                        >Membership</a
+                      >
+                    </li>
+                    <li class="w-full">
+                      <a
+                        href="#"
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
+                        >Sign up</a
+                      >
+                    </li>
+                    <li class="w-full">
+                      <a
+                        href="#"
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
+                        >Log in</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEARCH BAR -->
+          <div class="h-10 max-w-lg w-full flex items-center">
+            <form class="flex h-full w-full shadow-md">
+              <div
+                class="flex-1 relative after:absolute after:h-3/5 after:w-[1px] after:bg-[#e9eced] after:top-1/2 after:-translate-y-1/2 after:right-0 after:z-10"
+              >
+                <input
+                  type="text"
+                  placeholder="What’s on your to-do list?"
+                  class="pl-6 pr-3 truncate w-full h-full border-y border-l focus:outline-none rounded-tl rounded-bl font-bold text-black placeholder:font-normal"
+                />
+              </div>
+              <div class="max-w-[140px] relative">
+                <input
+                  type="text"
+                  placeholder="Zip code"
+                  class="w-full h-full truncate border-y pl-8 focus:outline-none font-bold text-black placeholder:font-normal"
+                />
+                <span class="absolute left-2 top-1/2 -translate-y-1/2">
+                  <svg
+                    height="18"
+                    width="18"
+                    class="fill-[#d3d4d5]"
+                    viewBox="0 0 18 18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.002 7.25c0 3.248 4.342 7.756 5.23 8.825l.769.925.769-.926c.888-1.068 5.234-5.553 5.234-8.824C15.004 4.145 13 1 9.001 1c-3.999 0-6 3.145-6 6.25zm1.994 0C4.995 5.135 6.175 3 9 3s4.002 2.135 4.002 4.25c0 1.777-2.177 4.248-4.002 6.59C7.1 11.4 4.996 9.021 4.996 7.25zM8.909 5.5c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+              <button
+                type="submit"
+                class="outline-none py-2 px-5 bg-[#009fd9] rounded-tr rounded-br"
+              >
+                <svg
+                  height="18"
+                  width="18"
+                  class="fill-white"
+                  viewBox="0 0 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.5 2C10.532 2 13 4.467 13 7.5c0 1.156-.36 2.229-.972 3.114l3.679 3.679a.999.999 0 11-1.414 1.414l-3.68-3.679A5.46 5.46 0 017.5 13 5.506 5.506 0 012 7.5C2 4.467 4.468 2 7.5 2zm0 2C5.57 4 4 5.57 4 7.5S5.57 11 7.5 11 11 9.43 11 7.5 9.43 4 7.5 4z"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </header>
