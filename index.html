@@ -136,14 +136,30 @@
         <!-- LOGO AND SEARCH BAR -->
         <div
           class="flex items-center h-full w-full relative"
-          x-data="{isDropdownOpen: false}"
+          x-data="{
+            isDropdownOpen: false,
+            bodyOverflowHidden(){
+              document.querySelector('body').style.overflow = 'hidden';
+            },
+            bodyOverflowVisible(){
+              document.querySelector('body').style.overflow = 'visible';
+            }
+            }"
         >
           <!-- MOBILE LOGO / MENU LOGO -->
           <div class="px-3 h-full flex">
             <div class="w-full h-full flex items-center justify-center">
               <button
                 class="_2gd24_U0YD-0g0Z5kwOYTx flex items-center border-none outline-none"
-                @click="isDropdownOpen = !isDropdownOpen"
+                @click="
+                isDropdownOpen = !isDropdownOpen
+                if (isDropdownOpen) {
+                  bodyOverflowHidden()
+                }
+                if (!isDropdownOpen) {
+                  bodyOverflowVisible()
+                }
+                "
               >
                 <svg
                   class="blue block"
@@ -173,8 +189,8 @@
                 </svg>
               </button>
               <div
-                class="absolute -z-10 -translate-y-full w-full flex flex-col left-0 top-full mt-0.5 bg-white border-r border-[#e9eced] transition-transform duration-300"
-                :class="{'translate-y-0' : isDropdownOpen}"
+                class="absolute -z-10 opacity-0 invisible -translate-y-full w-full h-screen flex flex-col left-0 top-full mt-0.5 bg-white border-r border-[#e9eced] transition-all duration-300"
+                :class="{'!translate-y-0 !opacity-100 !visible' : isDropdownOpen}"
               >
                 <div class="flex flex-column overflow-y-auto">
                   <ul class="text-base flex flex-col h-auto w-full">
@@ -185,25 +201,253 @@
                         >Home</a
                       >
                     </li>
-                    <li class="w-full">
+                    <li class="w-full" x-data="{exploreOpen: false}">
                       <a
                         href="#"
-                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full h-full block py-4 px-3"
-                        ><div class="flex items-center">
+                        class="font-bold text-[#2f3033] text-xl hover:text-[#009fd9] hover:bg-[#fafafa] w-full block py-4 px-3"
+                        @click="exploreOpen = !exploreOpen"
+                      >
+                        <div class="flex items-center">
                           Explore
                           <svg
-                            class="h2"
+                            class="h2 transition-transform"
                             height="28"
                             width="28"
                             fill="currentColor"
                             viewBox="0 0 28 28"
                             xmlns="http://www.w3.org/2000/svg"
+                            :class="{' rotate-90': exploreOpen}"
                           >
                             <path
                               d="M10.764 21.646L19 14l-8.275-7.689a1 1 0 00-1.482 1.342L16 14l-6.699 6.285c-.187.2-.301.435-.301.715a1 1 0 001 1c.306 0 .537-.151.764-.354z"
                             ></path>
-                          </svg></div
-                      ></a>
+                          </svg>
+                        </div>
+                      </a>
+                      <div
+                        class="w-full top-full left-0 px-7"
+                        x-show="exploreOpen"
+                        x-transition
+                      >
+                        <div class="flex flex-wrap">
+                          <!-- COL 1 -->
+                          <div class="w-full sm:w-1/2">
+                            <div class="text-sm font-bold py-1 tracking-wide">
+                              Home
+                            </div>
+                            <ul class="columns-1 md:columns-2">
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Cheap Movers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >House Cleaning Services</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Electricians</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Local Roofers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Handyman Services</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Movers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Last Minute Movers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >General Contractors</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Single Item Movers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Home Painters</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Affordable Roofers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Interior Painters</a
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="inline-block">
+                              <span class="flex items-center">
+                                <span
+                                  class="block py-2 font-bold text-xs text-[#2f3033]"
+                                  >See all &rarr;</span
+                                >
+                              </span>
+                            </a>
+                          </div>
+                          <!-- COL 2 -->
+                          <div class="w-full sm:w-1/4">
+                            <div class="text-sm font-bold py-1 tracking-wide">
+                              Events and more
+                            </div>
+                            <ul class="">
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Cheap Movers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >House Cleaning Services</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Electricians</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Local Roofers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Handyman Services</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Movers</a
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="inline-block">
+                              <span class="flex items-center">
+                                <span
+                                  class="block py-2 font-bold text-xs text-[#2f3033]"
+                                  >See all &rarr;</span
+                                >
+                              </span>
+                            </a>
+                          </div>
+                          <!-- COL 3 -->
+                          <div class="w-full sm:w-1/4">
+                            <div class="text-sm font-bold py-1 tracking-wide">
+                              Other info
+                            </div>
+                            <ul class="">
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Cheap Movers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >House Cleaning Services</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Electricians</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Local Roofers</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Handyman Services</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="#"
+                                  class="text-sm py-1 inline-block tracking-wide text-[#2f3033]"
+                                  >Movers</a
+                                >
+                              </li>
+                            </ul>
+                            <a href="#" class="inline-block">
+                              <span class="flex items-center">
+                                <span
+                                  class="block py-2 font-bold text-xs text-[#2f3033]"
+                                  >See all &rarr;</span
+                                >
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </li>
                     <li class="w-full">
                       <a
