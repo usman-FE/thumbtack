@@ -229,6 +229,7 @@
                         x-show="exploreOpen"
                         x-transition
                       >
+                        <!-- EXPLORE MENU -->
                         <div class="flex flex-wrap">
                           <!-- COL 1 -->
                           <div class="w-full sm:w-1/2">
@@ -484,8 +485,9 @@
           </div>
 
           <!-- SEARCH BAR -->
-          <div class="h-10 max-w-lg w-full flex items-center">
-            <form class="flex h-full w-full shadow-md">
+          <div class="h-10 flex-auto md:max-w-lg w-full flex items-center">
+            <!-- SEARCH BAR FOR MEDIUMS AND LARGS -->
+            <form class="hidden sm:flex h-full w-full shadow-md">
               <div
                 class="flex-1 relative after:absolute after:h-3/5 after:w-[1px] after:bg-[#e9eced] after:top-1/2 after:-translate-y-1/2 after:right-0 after:z-10"
               >
@@ -532,6 +534,222 @@
                 </svg>
               </button>
             </form>
+            <!-- SEARCH BAR FOR SMALLS -->
+            <div
+              class="w-full max-w-lg h-full shrink-0 block sm:hidden"
+              x-data="{searchModal: false}"
+            >
+              <button
+                class="block bg-white outline-none cursor-pointer w-full h-full border"
+                @click="searchModal = true"
+              >
+                <span class="flex w-full h-full items-center pr-4">
+                  <svg
+                    class="ml-4 mr-2 shrink-0 fill-[#d3d4d5]"
+                    height="28"
+                    width="28"
+                    fill="currentColor"
+                    viewBox="0 0 28 28"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.024 17.611A8.942 8.942 0 0021 12c0-4.963-4.037-9-9-9s-9 4.037-9 9 4.037 9 9 9a8.948 8.948 0 005.61-1.975l5.684 5.682c.194.195.45.293.706.293a.994.994 0 00.706-.293.997.997 0 000-1.414l-5.681-5.682zM5 12c0-3.859 3.142-7 7-7s7 3.141 7 7-3.142 7-7 7-7-3.141-7-7z"
+                    ></path>
+                  </svg>
+                  <span class="truncate block w-full">
+                    <span class="flex font-bold">
+                      <span class="truncate w-5 flex-1">
+                        Appliance Repair or Maintenance</span
+                      >
+                      <span class="font-bold shrink-0"> • 33316</span>
+                    </span>
+                  </span>
+                </span>
+              </button>
+              <!-- SEARCH MODAL -->
+              <div
+                class="fixed inset-0 z-50 flex flex-col visible overflow-auto"
+                x-show="searchModal"
+                x-transition
+              >
+                <div class="bg-white h-screen flex flex-col w-full">
+                  <div class="w-full relative">
+                    <form class="flex flex-col w-full">
+                      <div class="z-10 flex flex-col bg-white sticky top-0">
+                        <!-- STICKY BAR -->
+                        <div class="order-1">
+                          <!-- SEARCH BAR -->
+                          <div
+                            class="pr-4 ml-6 flex flex-col border-b border-[#e9eced]"
+                          >
+                            <div class="w-full flex items-center">
+                              <svg
+                                class="fill-[#d3d4d5]"
+                                height="18"
+                                width="18"
+                                fill="currentColor"
+                                viewBox="0 0 18 18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7.5 2C10.532 2 13 4.467 13 7.5c0 1.156-.36 2.229-.972 3.114l3.679 3.679a.999.999 0 11-1.414 1.414l-3.68-3.679A5.46 5.46 0 017.5 13 5.506 5.506 0 012 7.5C2 4.467 4.468 2 7.5 2zm0 2C5.57 4 4 5.57 4 7.5S5.57 11 7.5 11 11 9.43 11 7.5 9.43 4 7.5 4z"
+                                ></path>
+                              </svg>
+                              <input
+                                aria-label="Search on Thumbtack"
+                                value=""
+                                placeholder="What’s on your to-do list?"
+                                class="outline-none border-none px-2 py-4 flex-1 peer"
+                              />
+                              <button
+                                class="hidden bg-none outline-none border-none peer-focus:inline-block"
+                              >
+                                <svg
+                                  class="ml-1 block"
+                                  height="18"
+                                  width="18"
+                                  fill="currentColor"
+                                  viewBox="0 0 18 18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M4.771 3.357L9.013 7.6l4.244-4.242a1 1 0 111.414 1.414l-4.243 4.242 4.243 4.244a1 1 0 01-1.414 1.414l-4.244-4.243-4.242 4.243a1 1 0 01-1.414-1.414L7.6 9.013 3.357 4.771a1 1 0 111.414-1.414z"
+                                  ></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <!-- LOCATION -->
+                          <div
+                            class="pr-4 ml-6 flex flex-col border-b border-[#e9eced] shadow-sm"
+                          >
+                            <div class="flex items-center">
+                              <svg
+                                class="fill-[#d3d4d5]"
+                                height="18"
+                                width="18"
+                                fill="currentColor"
+                                viewBox="0 0 18 18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M3.002 7.25c0 3.248 4.342 7.756 5.23 8.825l.769.925.769-.926c.888-1.068 5.234-5.553 5.234-8.824C15.004 4.145 13 1 9.001 1c-3.999 0-6 3.145-6 6.25zm1.994 0C4.995 5.135 6.175 3 9 3s4.002 2.135 4.002 4.25c0 1.777-2.177 4.248-4.002 6.59C7.1 11.4 4.996 9.021 4.996 7.25zM8.909 5.5c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"
+                                ></path>
+                              </svg>
+                              <input
+                                name="zip_code"
+                                aria-label="Zip code"
+                                value=""
+                                placeholder="Zip code"
+                                pattern="[0-9]*"
+                                inputmode="numeric"
+                                maxlength="5"
+                                autocomplete="postal-code"
+                                class="outline-none border-none px-2 py-4 flex-1 peer"
+                              />
+                              <button
+                                class="hidden bg-none outline-none border-none peer-focus:inline-block"
+                              >
+                                <svg
+                                  class="ml-1 block"
+                                  height="18"
+                                  width="18"
+                                  fill="currentColor"
+                                  viewBox="0 0 18 18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M4.771 3.357L9.013 7.6l4.244-4.242a1 1 0 111.414 1.414l-4.243 4.242 4.243 4.244a1 1 0 01-1.414 1.414l-4.244-4.243-4.242 4.243a1 1 0 01-1.414-1.414L7.6 9.013 3.357 4.771a1 1 0 111.414-1.414z"
+                                  ></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- SEARCH AND CANCEL BUTTONS -->
+                        <div class="font-sm">
+                          <div class="flex justify-between pb-2 pr-4 pl-6 pt-6">
+                            <button
+                              class="border-none outline-none inline-block text-[#009fd9]"
+                              @click="searchModal = false"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              class="border-none outline-none inline-block text-[#009fd9]"
+                            >
+                              Search
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- RESULTS -->
+                      <ul
+                        tabindex="-1"
+                        class="order-2 block outline-none bg-white visible"
+                      >
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide">
+                              <strong>Appliance Repair or Maintenance</strong>
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                        <li class="cursor-pointer hover:bg-[#eaf6fa]">
+                          <div class="px-6 py-3 border-b border-[#e9eced]">
+                            <p class="text-base tracking-wide text-[#2f3033]">
+                              Samsung Appliance Repair
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
