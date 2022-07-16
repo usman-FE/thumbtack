@@ -14,7 +14,7 @@
     <!-- HEADER START -->
     <header class="z-10 bg-white">
       <!-- DESKTOP HEADER -->
-      <div class="hidden lg:flex items-center justify-between h-16 border-b">
+      <div class="hidden lg:flex items-center justify-between h-16">
         <!-- LOGO AND SEARCH BAR -->
         <div class="flex items-center w-1/2">
           <!-- DESKTOP LOGO -->
@@ -130,9 +130,7 @@
         </div>
       </div>
       <!-- MOBILE HEADER -->
-      <div
-        class="flex lg:hidden items-center justify-between h-16 border-b pr-6"
-      >
+      <div class="flex lg:hidden items-center justify-between h-16 pr-6">
         <!-- LOGO AND SEARCH BAR -->
         <div
           class="flex items-center h-full w-full relative"
@@ -671,7 +669,7 @@
                           <div class="flex justify-between pb-2 pr-4 pl-6 pt-6">
                             <button
                               class="border-none outline-none inline-block text-[#009fd9]"
-                              @click="searchModal = false"
+                              @click.prevent="searchModal = false"
                             >
                               Cancel
                             </button>
@@ -755,5 +753,847 @@
       </div>
     </header>
     <!-- HEADER END -->
+    <!-- MAIN SECTION START-->
+    <main class="flex border border-[#d3d4d5]">
+      <!-- SIDEBAR -->
+      <aside class="hidden lg:block p-8 w-1/5 border-r shrink-0">
+        <div class="mb-4 font-bold text-[#2f3033] text-xl">Filters</div>
+        <!-- FILTER SEARCH BAR -->
+        <div class="mb-4">
+          <div class="text-sm font-bold mb-2 flex items-center relative">
+            Sort by Reviews
+            <div class="ml-1">
+              <div class="flex items-center justify-center">
+                <button class="peer">
+                  <svg
+                    height="18"
+                    width="18"
+                    fill="currentColor"
+                    viewBox="0 0 18 18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.026 5.1c-1.097 0-2.076.554-2.56 1.443a.752.752 0 001.32.717c.217-.4.702-.658 1.24-.658.652 0 1.353.286 1.353 1.088-.008.308-.877 1.167-1.76 1.734a.752.752 0 00.407 1.382.74.74 0 00.404-.12c.575-.367 2.45-1.673 2.45-2.996 0-1.5-1.202-2.59-2.854-2.59zm4.223 8.15a6.01 6.01 0 01-8.49 0 6.01 6.01 0 010-8.491 5.982 5.982 0 014.246-1.756 5.98 5.98 0 014.244 1.756 6.01 6.01 0 010 8.491zm1.415-9.906c-3.12-3.12-8.199-3.12-11.32 0-3.12 3.12-3.12 8.2 0 11.32a7.98 7.98 0 005.66 2.341c2.05 0 4.1-.78 5.66-2.34 3.12-3.122 3.12-8.2 0-11.321zm-5.35 8.121a.732.732 0 00-.58 0 .748.748 0 10.58 1.38.75.75 0 000-1.38z"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="absolute w-full z-10 top-full mt-2 ml-5 left-0 hidden peer-hover:block"
+                >
+                  <p
+                    class="text-xs leading-snug p-3 bg-slate-800 text-white rounded-md relative"
+                  >
+                    <?xml version="1.0" standalone="no"?>
+                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                    <svg
+                      version="1.0"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="15"
+                      viewBox="0 0 1280.000000 640.000000"
+                      preserveAspectRatio="xMidYMid meet"
+                      class="fill-slate-800 absolute top-[-10px] left-1/2 -translate-x-1/2"
+                    >
+                      <g
+                        transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)"
+                      >
+                        <path
+                          d="M3198 3205 c-1759 -1756 -3198 -3196 -3198 -3199 0 -3 2880 -6 6400
+-6 3520 0 6400 3 6400 7 0 7 -6388 6387 -6399 6390 -3 1 -1445 -1435 -3203
+-3192z"
+                        />
+                      </g>
+                    </svg>
+                    Want a pro that’s the “best in town” or “replies quickly”?
+                    Use this space to search these reviews by keywords.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex border rounded-md">
+            <div class="flex-1">
+              <div class="p-px w-full inline-flex text-[#2f3033]">
+                <input
+                  type="text"
+                  class="py-2.5 px-4 focus:outline-none w-full"
+                  placeholder='Try "best"'
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                class="text-white border-none outline-none bg-[#009fd9] rounded-r-sm w-full h-full"
+              >
+                <span
+                  class="min-h-[36px] flex items-center justify-center px-6 h-full"
+                  ><svg
+                    height="18"
+                    width="18"
+                    fill="currentColor"
+                    viewBox="0 0 18 18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.5 2C10.532 2 13 4.467 13 7.5c0 1.156-.36 2.229-.972 3.114l3.679 3.679a.999.999 0 11-1.414 1.414l-3.68-3.679A5.46 5.46 0 017.5 13 5.506 5.506 0 012 7.5C2 4.467 4.468 2 7.5 2zm0 2C5.57 4 4 5.57 4 7.5S5.57 11 7.5 11 11 9.43 11 7.5 9.43 4 7.5 4z"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FILTER CHECKBOXES -->
+        <div>
+          <div class="mb-4">
+            <div class="mb-5">
+              <div class="font-bold mb-2 text-sm flex items-center">
+                Appliance brand
+              </div>
+              <div>
+                <form
+                  class="flex flex-col mb-2"
+                  x-data="{
+                  isBrandOpen : true,
+                  moreText: 'More'
+                }"
+                >
+                  <label
+                    for="check1"
+                    class="cursor-pointer mb-2 flex relative items-center"
+                  >
+                    <input
+                      type="radio"
+                      name="checkbox"
+                      id="check1"
+                      hidden
+                      class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                    />
+                    <!-- CHECKED -->
+                    <svg
+                      class="hidden z-20 peer-checked:inline-block absolute"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#009fd9"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                        <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                      </g>
+                    </svg>
+                    <!-- UNCHECKED -->
+                    <svg
+                      class="z-10"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#d3d4d5"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                      </g>
+                    </svg>
+
+                    <span class="ml-2 flex items-center justify-center mt-px"
+                      >Bosch</span
+                    >
+                  </label>
+                  <label
+                    for="check3"
+                    class="cursor-pointer mb-2 flex relative items-center"
+                  >
+                    <input
+                      type="radio"
+                      name="checkbox"
+                      id="check3"
+                      hidden
+                      class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                    />
+                    <!-- CHECKED -->
+                    <svg
+                      class="hidden z-20 peer-checked:inline-block absolute"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#009fd9"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                        <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                      </g>
+                    </svg>
+                    <!-- UNCHECKED -->
+                    <svg
+                      class="z-10"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#d3d4d5"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                      </g>
+                    </svg>
+
+                    <span class="ml-2 flex items-center justify-center mt-px"
+                      >GE</span
+                    >
+                  </label>
+                  <label
+                    for="check4"
+                    class="cursor-pointer mb-2 flex relative items-center"
+                  >
+                    <input
+                      type="radio"
+                      name="checkbox"
+                      id="check4"
+                      hidden
+                      class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                    />
+                    <!-- CHECKED -->
+                    <svg
+                      class="hidden z-20 peer-checked:inline-block absolute"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#009fd9"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                        <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                      </g>
+                    </svg>
+                    <!-- UNCHECKED -->
+                    <svg
+                      class="z-10"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#d3d4d5"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                      </g>
+                    </svg>
+
+                    <span class="ml-2 flex items-center justify-center mt-px"
+                      >Haier</span
+                    >
+                  </label>
+                  <label
+                    for="check5"
+                    class="cursor-pointer mb-2 flex relative items-center"
+                  >
+                    <input
+                      type="radio"
+                      name="checkbox"
+                      id="check5"
+                      hidden
+                      class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                    />
+                    <!-- CHECKED -->
+                    <svg
+                      class="hidden z-20 peer-checked:inline-block absolute"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#009fd9"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                        <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                      </g>
+                    </svg>
+                    <!-- UNCHECKED -->
+                    <svg
+                      class="z-10"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#d3d4d5"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                      </g>
+                    </svg>
+
+                    <span class="ml-2 flex items-center justify-center mt-px"
+                      >Kenmore</span
+                    >
+                  </label>
+                  <label
+                    for="check6"
+                    class="cursor-pointer mb-2 flex relative items-center"
+                  >
+                    <input
+                      type="radio"
+                      name="checkbox"
+                      id="check6"
+                      hidden
+                      class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                    />
+                    <!-- CHECKED -->
+                    <svg
+                      class="hidden z-20 peer-checked:inline-block absolute"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#009fd9"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                        <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                      </g>
+                    </svg>
+                    <!-- UNCHECKED -->
+                    <svg
+                      class="z-10"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="#ffffff" fill-rule="evenodd">
+                        <circle
+                          stroke="#d3d4d5"
+                          stroke-width="2"
+                          cx="10"
+                          cy="10"
+                          r="9"
+                        ></circle>
+                      </g>
+                    </svg>
+
+                    <span class="ml-2 flex items-center justify-center mt-px"
+                      >Kenmore</span
+                    >
+                  </label>
+                  <div class="flex flex-col" x-show="isBrandOpen" x-transition>
+                    <label
+                      for="check7"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check7"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >LG</span
+                      >
+                    </label>
+                    <label
+                      for="check8"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check8"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Maytag</span
+                      >
+                    </label>
+                    <label
+                      for="check9"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check9"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Miele</span
+                      >
+                    </label>
+                    <label
+                      for="check10"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check10"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Samsung</span
+                      >
+                    </label>
+                    <label
+                      for="check11"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check11"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Thermador</span
+                      >
+                    </label>
+                    <label
+                      for="check12"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check12"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Viking</span
+                      >
+                    </label>
+                    <label
+                      for="check13"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check13"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Whirlpool</span
+                      >
+                    </label>
+                    <label
+                      for="check14"
+                      class="cursor-pointer mb-2 flex relative items-center"
+                    >
+                      <input
+                        type="radio"
+                        name="checkbox"
+                        id="check14"
+                        hidden
+                        class="accent-[#009fd9] focus:accent-[#009fd9] active:accent-[#009fd9] hover:accent-[#009fd9] peer"
+                      />
+                      <!-- CHECKED -->
+                      <svg
+                        class="hidden z-20 peer-checked:inline-block absolute"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#009fd9"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                          <circle fill="#009fd9" cx="10" cy="10" r="6"></circle>
+                        </g>
+                      </svg>
+                      <!-- UNCHECKED -->
+                      <svg
+                        class="z-10"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="#ffffff" fill-rule="evenodd">
+                          <circle
+                            stroke="#d3d4d5"
+                            stroke-width="2"
+                            cx="10"
+                            cy="10"
+                            r="9"
+                          ></circle>
+                        </g>
+                      </svg>
+
+                      <span class="ml-2 flex items-center justify-center mt-px"
+                        >Other</span
+                      >
+                    </label>
+                  </div>
+                  <button @click.prevent="isBrandOpen = !isBrandOpen">
+                    <span x-show="isBrandOpen" class="flex items-center"
+                      >Less
+                      <svg
+                        height="14"
+                        width="14"
+                        class="rotate-180"
+                        fill="currentColor"
+                        viewBox="0 0 14 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.236 5.323L7 10l3.793-4.706A.795.795 0 0011 4.75c0-.414-.299-.75-.667-.75a.623.623 0 00-.435.182L7 7.75 4.143 4.226C4.01 4.086 3.853 4 3.667 4 3.298 4 3 4.336 3 4.75c0 .23.1.402.236.573z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span x-show="!isBrandOpen" class="flex items-center">
+                      More
+                      <svg
+                        height="14"
+                        width="14"
+                        fill="currentColor"
+                        viewBox="0 0 14 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.236 5.323L7 10l3.793-4.706A.795.795 0 0011 4.75c0-.414-.299-.75-.667-.75a.623.623 0 00-.435.182L7 7.75 4.143 4.226C4.01 4.086 3.853 4 3.667 4 3.298 4 3 4.336 3 4.75c0 .23.1.402.236.573z"
+                        ></path>
+                      </svg>
+                    </span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- RESET BUTTON -->
+        <button
+          class="text-[#009fd9] inline-block bg-none border-none outline-none cursor-pointer"
+        >
+          Reset
+        </button>
+      </aside>
+      <section class="flex-1"></section>
+    </main>
+    <!-- MAIN SECTION END-->
   </body>
 </html>
