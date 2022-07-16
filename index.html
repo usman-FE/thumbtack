@@ -754,7 +754,7 @@
     </header>
     <!-- HEADER END -->
     <!-- MAIN SECTION START-->
-    <main class="flex border border-[#d3d4d5]">
+    <main class="flex border-solid border border-[#d3d4d5]">
       <!-- SIDEBAR -->
       <aside class="hidden lg:block p-8 w-1/5 border-r shrink-0">
         <div class="mb-4 font-bold text-[#2f3033] text-xl">Filters</div>
@@ -854,7 +854,7 @@
                 <form
                   class="flex flex-col mb-2"
                   x-data="{
-                  isBrandOpen : true,
+                  isBrandOpen : false,
                   moreText: 'More'
                 }"
                 >
@@ -1550,13 +1550,14 @@
                     </label>
                   </div>
                   <button @click.prevent="isBrandOpen = !isBrandOpen">
-                    <span x-show="isBrandOpen" class="flex items-center"
+                    <span
+                      x-show="isBrandOpen"
+                      class="flex items-center text-[#009fd9]"
                       >Less
                       <svg
                         height="14"
                         width="14"
-                        class="rotate-180"
-                        fill="currentColor"
+                        class="rotate-180 fill-[#009fd9]"
                         viewBox="0 0 14 14"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -1565,12 +1566,15 @@
                         ></path>
                       </svg>
                     </span>
-                    <span x-show="!isBrandOpen" class="flex items-center">
+                    <span
+                      x-show="!isBrandOpen"
+                      class="flex items-center text-[#009fd9]"
+                    >
                       More
                       <svg
                         height="14"
                         width="14"
-                        fill="currentColor"
+                        class="fill-[#009fd9]"
                         viewBox="0 0 14 14"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -1593,7 +1597,199 @@
         </button>
       </aside>
       <!-- MAIN CONTENT -->
-      <section class="flex-1"></section>
+      <section class="flex-1 w-full flex flex-col">
+        <div class="relative">
+          <div class="grow h-full lg:pt-6">
+            <div class="h-100 flex flex-auto relative flex-col">
+              <div class="grow h-full p-4">
+                <div class="h-full flex flex-auto relative flex-col">
+                  <!-- MAIN CONTENT -->
+                  <div
+                    class="w-full lg:px-5 mx-auto relative sm:max-w-[449px] md:mx-w-[668px] lg:max-w-[740px]"
+                  >
+                    <!-- MAIN TITLE -->
+                    <div class="text-lg font-bold">
+                      Top 4 Appliance Service Specialists based on 1 filter
+                    </div>
+                    <!-- MAIN CARDS -->
+                    <div class="py-4 md:py-6 border-b border-[#e9eced]">
+                      <a href="#">
+                        <div class="flex flex-wrap">
+                          <!-- CARD IMAGE -->
+                          <div
+                            class="w-20 h-20 md:w-36 md:h-36 mr-2 md:mr-4 relative overflow-hidden"
+                          >
+                            <div class="hidden md:block">
+                              <div class="w-36 h-36 relative">
+                                <img
+                                  src="images/400square-legacy.jpg"
+                                  class="w-full block object-cover"
+                                  alt="square"
+                                />
+                              </div>
+                            </div>
+                            <div class="block md:hidden">
+                              <div class="w-20 h-20 relative">
+                                <img
+                                  src="images/400square-legacy.jpg"
+                                  class="w-full block object-cover"
+                                  alt="square"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <!-- CARD CONTENT -->
+                          <div
+                            class="flex md:flex-row flex-1 md:justify-between"
+                          >
+                            <div class="w-full max-w-lg flex-1">
+                              <div>
+                                <!-- TITLE -->
+                                <div
+                                  class="mr-1 text-lg text-black font-bold hover:text-[#009fd9]"
+                                >
+                                  AC and APPLIANCES FIX
+                                </div>
+                                <!-- RATING -->
+                                <div class="flex flex-wrap mt-1">
+                                  <div class="flex items-center">
+                                    <div
+                                      class="text-[#676d73] whitespace-nowrap overflow-hidden text-sm"
+                                    >
+                                      <div class="flex items-center">
+                                        <div
+                                          class="flex text-[#2db783] mr-1 shrink-0 font-bold grow-0"
+                                        >
+                                          5.0
+                                        </div>
+                                        <div
+                                          class="flex text-[#2db783] mr-1 shrink-0 font-bold grow-0"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 fill-[#2db783]"
+                                            viewBox="0 0 20 20"
+                                          >
+                                            <path
+                                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            />
+                                          </svg>
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 fill-[#2db783]"
+                                            viewBox="0 0 20 20"
+                                          >
+                                            <path
+                                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            />
+                                          </svg>
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 fill-[#2db783]"
+                                            viewBox="0 0 20 20"
+                                          >
+                                            <path
+                                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            />
+                                          </svg>
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 fill-[#2db783]"
+                                            viewBox="0 0 20 20"
+                                          >
+                                            <path
+                                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            />
+                                          </svg>
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 fill-[#2db783]"
+                                            viewBox="0 0 20 20"
+                                          >
+                                            <path
+                                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            />
+                                          </svg>
+                                        </div>
+                                        <p
+                                          class="text-sm text-[#676d73] flex items-center grow-0 shrink-0"
+                                        >
+                                          (2)
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- REMOTE SERVICE -->
+                                <div class="flex flex-wrap">
+                                  <div class="mt-2 mr-1">
+                                    <div class="flex">
+                                      <div class="flex">
+                                        <div>
+                                          <div
+                                            class="flex text-[#492782] bg-[#f5efff] text-sm px-3 h-6 truncate font-bold items-center rounded-full"
+                                          >
+                                            <svg
+                                              class="mr-1"
+                                              height="14"
+                                              width="14"
+                                              fill="currentColor"
+                                              viewBox="0 0 14 14"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <path
+                                                d="M11.665 8.853l-1.554-.778v-2.15l1.554-.777v3.705zm-3.11.486a.773.773 0 01-.772.772H3.104a.773.773 0 01-.771-.772V4.66c0-.426.346-.772.771-.772h4.679c.426 0 .772.346.772.772V9.34zm4.666-6.708l-3.157 1.578a2.33 2.33 0 00-2.281-1.875H3.104A2.33 2.33 0 00.777 4.66V9.34a2.33 2.33 0 002.327 2.328h4.679c1.128 0 2.07-.807 2.281-1.875l3.157 1.578V2.63z"
+                                              ></path>
+                                            </svg>
+                                            Offers remote services
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- REMOTE SERVICE -->
+                                <div class="flex flex-wrap">
+                                  <div class="mt-2 mr-1">
+                                    <div class="flex">
+                                      <div class="flex">
+                                        <div>
+                                          <div
+                                            class="flex text-sm h-6 text-[#676d73] truncate items-center"
+                                          >
+                                            <!-- CONTINUE -->
+                                            <svg
+                                              class="mr-1 md:mr-2"
+                                              height="18"
+                                              width="18"
+                                              fill="currentColor"
+                                              viewBox="0 0 18 18"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <path
+                                                d="M3.002 7.25c0 3.248 4.342 7.756 5.23 8.825l.769.925.769-.926c.888-1.068 5.234-5.553 5.234-8.824C15.004 4.145 13 1 9.001 1c-3.999 0-6 3.145-6 6.25zm1.994 0C4.995 5.135 6.175 3 9 3s4.002 2.135 4.002 4.25c0 1.777-2.177 4.248-4.002 6.59C7.1 11.4 4.996 9.021 4.996 7.25zM8.909 5.5c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"
+                                              ></path>
+                                            </svg>
+                                            Serves Fort Lauderdale, FL
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- MAIN SECTION END-->
   </body>
