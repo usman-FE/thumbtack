@@ -4137,7 +4137,10 @@
               </ul>
             </div>
             <!-- RELATED SECTION FOR SMALL -->
-            <div class="block lg:hidden px-4 sm:px-8">
+            <div
+              class="block lg:hidden px-4 sm:px-8"
+              x-data="{smallFilter : false}"
+            >
               <!-- TITLE FOT SMALL -->
               <div class="text-base font-bold">Related Categories</div>
               <!-- CATEGORIES FOR SMALL -->
@@ -4231,7 +4234,7 @@
                   </a>
                 </li>
                 <!-- SMALL ITEM -->
-                <li class="border-b border-solid border-[#d3d4d5]">
+                <li class="">
                   <a
                     href="#"
                     class="py-4 flex justify-between items-center text-[#009fd9]"
@@ -4252,7 +4255,40 @@
                     </div>
                   </a>
                 </li>
+                <!-- SMALL ITEM -->
+                <li
+                  class="border-t border-solid border-[#d3d4d5]"
+                  x-show="smallFilter"
+                >
+                  <a
+                    href="#"
+                    class="py-4 flex justify-between items-center text-[#009fd9]"
+                  >
+                    <div class="flex-1">Satellite Dish Services</div>
+                    <div class="text-[#676d73]">
+                      <svg
+                        height="14"
+                        width="14"
+                        fill="currentColor"
+                        viewBox="0 0 14 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.323 10.764L10 7 5.294 3.207A.795.795 0 004.75 3c-.414 0-.75.298-.75.667 0 .166.069.318.182.435L7.75 7 4.226 9.857c-.14.133-.226.29-.226.476 0 .368.336.667.75.667.23 0 .402-.1.573-.236z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
               </ul>
+              <!-- SMALL BUTTON FOR SEE MORE -->
+              <button
+                type="button"
+                class="text-sm text-[#009fd9] bg-none p-0 outline-none border-none mt-2 font-bold flex items-center"
+                @click.prevent="smallFilter = !smallFilter"
+              >
+                Show more
+              </button>
             </div>
           </div>
         </div>
