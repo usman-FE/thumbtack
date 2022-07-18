@@ -806,6 +806,10 @@ html {
   margin-bottom: 1.5rem;
 }
 
+.-ml-4 {
+  margin-left: -1rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1437,6 +1441,14 @@ html {
   padding-top: 2rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1690,6 +1702,10 @@ html {
     margin: auto;
   }
 
+  .sm\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -1714,8 +1730,16 @@ html {
     max-width: 416px;
   }
 
+  .sm\:cursor-text {
+    cursor: text;
+  }
+
   .sm\:flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .sm\:border-0 {
+    border-width: 0px;
   }
 
   .sm\:p-8 {
@@ -1725,6 +1749,18 @@ html {
   .sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .sm\:pt-8 {
+    padding-top: 2rem;
+  }
+
+  .sm\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .sm\:pb-0 {
+    padding-bottom: 0px;
   }
 }
 
@@ -1769,6 +1805,10 @@ html {
     width: 9rem;
   }
 
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
   .md\:max-w-lg {
     max-width: 32rem;
   }
@@ -1801,6 +1841,15 @@ html {
   .md\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
   }
 }
 
