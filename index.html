@@ -4085,7 +4085,7 @@
             <!-- RELATED CATEGORIES FOR LARGE -->
             <div class="hidden lg:block">
               <!-- CATEGORY ITEMS -->
-              <ul class="text-base flex flex-wrap justify-center">
+              <ul class="text-sm flex flex-wrap justify-center">
                 <!-- CATEGORY ITEM -->
                 <li
                   class="mx-2 mb-4 font-bold border-2 rounded-sm border-solid border-[#d3d4d5]"
@@ -4302,15 +4302,27 @@
           class="text-base md:px-4 sm:pt-8 md:pt-16 border-t border-solid border-[#e9eced]"
         >
           <div class="flex -ml-4 flex-wrap">
+            <!-- LEFT -->
             <div class="w-full sm:w-1/2 block">
               <div class="flex -ml-4 flex-wrap">
-                <div class="w-full md:w-1/2 pl-4">
+                <!-- THUMBTACK -->
+                <div class="w-full md:w-1/2 pl-4" x-data="{isOpen : false}">
                   <div
                     class="sm:mb-6 border-t border-solid border-[#e9eced] sm:border-0 pl-4"
                   >
-                    <!-- HEADING -->
+                    <!-- HEADING LARGE -->
                     <div
-                      class="pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 flex justify-between"
+                      class="hidden sm:flex pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 justify-between"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Thumbtack</div>
+                        <div>Consider it done.</div>
+                      </div>
+                    </div>
+                    <!-- HEADING SMALL -->
+                    <div
+                      class="pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 flex sm:hidden justify-between"
+                      @click.prevent="isOpen = !isOpen"
                     >
                       <div class="font-bold text-[#2f3033]">
                         <div>Thumbtack</div>
@@ -4323,6 +4335,7 @@
                           fill="currentColor"
                           viewBox="0 0 18 18"
                           xmlns="http://www.w3.org/2000/svg"
+                          :class="{'rotate-180': isOpen}"
                         >
                           <path
                             d="M14.646 6.764L9 13 3.311 6.725a1 1 0 011.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 011 1c0 .306-.151.537-.354.764z"
@@ -4331,8 +4344,414 @@
                       </div>
                     </div>
                     <!-- NAVIGATION -->
-                    <ul>
-                      <li>1</li>
+                    <ul
+                      class="mb-4 sm:mt-2 md:mt-4"
+                      :class="{'hidden' : !isOpen}"
+                    >
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >About</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Careers</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Press</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Blog</a
+                        >
+                      </li>
+                      <li class="flex mt-3">
+                        <div class="mr-2">
+                          <a href="#" class="text-[#676d73]">
+                            <svg
+                              aria-label="Instagram"
+                              height="18"
+                              width="18"
+                              fill="currentColor"
+                              viewBox="0 0 18 18"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="hover:fill-[#009fd9]"
+                            >
+                              <path
+                                d="M13.908 1A3.096 3.096 0 0117 4.092v9.816a3.095 3.095 0 01-3.092 3.09H4.092A3.094 3.094 0 011 13.909V4.092A3.095 3.095 0 014.092 1h9.816zM5.215 7.549H2.94v5.963c0 .77.654 1.395 1.459 1.395h9.346c.804 0 1.459-.626 1.459-1.395V7.55H12.93c.197.462.308.966.308 1.495 0 2.195-1.868 3.982-4.165 3.982-2.297 0-4.164-1.787-4.164-3.982 0-.53.11-1.033.306-1.495zm3.857-1.226c-.818 0-1.542.405-1.988 1.022a2.435 2.435 0 00-.464 1.43c0 1.353 1.1 2.453 2.452 2.453 1.353 0 2.454-1.1 2.454-2.452 0-.534-.174-1.028-.465-1.43a2.45 2.45 0 00-1.989-1.023zm6.133-3.68l-.32.002-2.133.007.008 2.444 2.445-.008V2.644z"
+                              ></path>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="mr-2">
+                          <a href="#" class="text-[#676d73]">
+                            <svg
+                              aria-label="Twitter"
+                              height="18"
+                              width="18"
+                              fill="currentColor"
+                              class="hover:fill-[#009fd9]"
+                              viewBox="0 0 18 18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.02 15.01c6.042 0 9.345-5.007 9.345-9.345 0-.144 0-.287-.007-.423A6.728 6.728 0 0017 3.54a6.666 6.666 0 01-1.887.518 3.283 3.283 0 001.444-1.819 6.652 6.652 0 01-2.084.797 3.285 3.285 0 00-5.592 2.997A9.318 9.318 0 012.11 2.6a3.295 3.295 0 00-.443 1.649 3.27 3.27 0 001.464 2.731 3.226 3.226 0 01-1.485-.409v.041a3.288 3.288 0 002.636 3.222 3.274 3.274 0 01-1.485.055 3.28 3.28 0 003.065 2.281A6.602 6.602 0 011 13.525a9.15 9.15 0 005.02 1.485z"
+                              ></path>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="mr-2">
+                          <a href="#" class="text-[#676d73]">
+                            <svg
+                              aria-label="Pinterest"
+                              height="18"
+                              width="18"
+                              fill="currentColor"
+                              class="hover:fill-[#009fd9]"
+                              viewBox="0 0 18 18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.568 1C5.202 1 3 4.13 3 6.741c0 1.581.598 2.987 1.882 3.51.21.087.399.004.46-.23.042-.16.143-.567.188-.737.061-.23.037-.31-.133-.512-.37-.436-.607-1.001-.607-1.802 0-2.322 1.738-4.402 4.525-4.402 2.468 0 3.824 1.508 3.824 3.522 0 2.65-1.172 4.887-2.913 4.887-.962 0-1.681-.795-1.45-1.77.275-1.165.81-2.42.81-3.262 0-.752-.404-1.38-1.239-1.38-.983 0-1.772 1.017-1.772 2.38 0 .867.293 1.454.293 1.454l-1.182 5.008c-.351 1.486-.053 3.308-.028 3.491.015.11.155.136.219.054.09-.119 1.261-1.564 1.659-3.008.113-.409.646-2.526.646-2.526.32.61 1.253 1.145 2.245 1.145 2.954 0 4.959-2.693 4.959-6.298C15.386 3.54 13.077 1 9.568 1z"
+                              ></path>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="mr-2">
+                          <a href="#" class="text-[#676d73]">
+                            <svg
+                              aria-label="Facebook"
+                              height="18"
+                              width="18"
+                              fill="currentColor"
+                              class="hover:fill-[#009fd9]"
+                              viewBox="0 0 18 18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M11 7h3v3h-3v7H8v-7H5V7h3V5.745c0-1.189.374-2.691 1.118-3.512C9.862 1.41 10.791 1 11.904 1H14v3h-2.1c-.498 0-.9.402-.9.899V7z"
+                              ></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- CUSTOMERS -->
+                <div class="w-full md:w-1/2 pl-4" x-data="{isOpen : false}">
+                  <div
+                    class="sm:mb-6 border-t border-solid border-[#e9eced] sm:border-0 pl-4"
+                  >
+                    <!-- HEADING LARGE -->
+                    <div
+                      class="hidden sm:flex pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 justify-between"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Customers</div>
+                      </div>
+                    </div>
+                    <!-- HEADING SMALL -->
+                    <div
+                      class="pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 flex sm:hidden justify-between"
+                      @click.prevent="isOpen = !isOpen"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Customers</div>
+                      </div>
+                      <div class="flex items-center sm:hidden">
+                        <svg
+                          height="18"
+                          width="18"
+                          fill="currentColor"
+                          viewBox="0 0 18 18"
+                          xmlns="http://www.w3.org/2000/svg"
+                          :class="{'rotate-180': isOpen}"
+                        >
+                          <path
+                            d="M14.646 6.764L9 13 3.311 6.725a1 1 0 011.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 011 1c0 .306-.151.537-.354.764z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!-- NAVIGATION -->
+                    <ul
+                      class="mb-4 sm:mt-2 md:mt-4"
+                      :class="{'hidden' : !isOpen}"
+                    >
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >How to use Thumbtack</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Sign up</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Get the app</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Services near me</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Cost estimates</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Project how to’s</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Project guides</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Small business survey</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Questions and answers</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- RIGHT -->
+            <div class="w-full sm:w-1/2 block">
+              <div class="flex -ml-4 flex-wrap">
+                <!-- Pros -->
+                <div class="w-full md:w-1/2 pl-4" x-data="{isOpen : false}">
+                  <div
+                    class="sm:mb-6 border-t border-solid border-[#e9eced] sm:border-0 pl-4"
+                  >
+                    <!-- HEADING LARGE -->
+                    <div
+                      class="hidden sm:flex pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 justify-between"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Pros</div>
+                      </div>
+                    </div>
+                    <!-- HEADING SMALL -->
+                    <div
+                      class="pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 flex sm:hidden justify-between"
+                      @click.prevent="isOpen = !isOpen"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Pros</div>
+                      </div>
+                      <div class="flex items-center sm:hidden">
+                        <svg
+                          height="18"
+                          width="18"
+                          fill="currentColor"
+                          viewBox="0 0 18 18"
+                          xmlns="http://www.w3.org/2000/svg"
+                          :class="{'rotate-180': isOpen}"
+                        >
+                          <path
+                            d="M14.646 6.764L9 13 3.311 6.725a1 1 0 011.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 011 1c0 .306-.151.537-.354.764z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!-- NAVIGATION -->
+                    <ul
+                      class="mb-4 sm:mt-2 md:mt-4"
+                      :class="{'hidden' : !isOpen}"
+                    >
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Thumbtack for pros</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Sign up as a pro</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Community</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Pro Resources</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Success stories</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Pro reviews</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                        >
+                          iPhone app for pros</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Android app for pros</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- SUPPORT -->
+                <div class="w-full md:w-1/2 pl-4" x-data="{isOpen : false}">
+                  <div
+                    class="sm:mb-6 border-t border-solid border-[#e9eced] sm:border-0 pl-4"
+                  >
+                    <!-- HEADING LARGE -->
+                    <div
+                      class="hidden sm:flex pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 justify-between"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Support</div>
+                      </div>
+                    </div>
+                    <!-- HEADING SMALL -->
+                    <div
+                      class="pt-4 pb-4 sm:pb-0 cursor-pointer sm:cursor-text sm:pt-0 flex sm:hidden justify-between"
+                      @click.prevent="isOpen = !isOpen"
+                    >
+                      <div class="font-bold text-[#2f3033]">
+                        <div>Support</div>
+                      </div>
+                      <div class="flex items-center sm:hidden">
+                        <svg
+                          height="18"
+                          width="18"
+                          fill="currentColor"
+                          viewBox="0 0 18 18"
+                          xmlns="http://www.w3.org/2000/svg"
+                          :class="{'rotate-180': isOpen}"
+                        >
+                          <path
+                            d="M14.646 6.764L9 13 3.311 6.725a1 1 0 011.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 011 1c0 .306-.151.537-.354.764z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!-- NAVIGATION -->
+                    <ul
+                      class="sm:block mb-4 sm:mt-2 md:mt-4"
+                      :class="{'hidden' : !isOpen}"
+                    >
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Help</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Safety</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >COVID-19 Info</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Terms of Use</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Privacy Policy</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >CA Privacy Notice</a
+                        >
+                      </li>
+                      <li class="mb-1">
+                        <a
+                          href="#"
+                          class="text-[#676d73] tracking-wide hover:text-[#009fd9]"
+                          >Do Not Sell My Info</a
+                        >
+                      </li>
                     </ul>
                   </div>
                 </div>
