@@ -950,6 +950,10 @@ html {
   width: 0.75rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .min-w-\[19px\] {
   min-width: 19px;
 }
@@ -1539,6 +1543,11 @@ html {
   color: rgb(89 104 226 / var(--tw-text-opacity));
 }
 
+.text-\[\#d3d4d5\] {
+  --tw-text-opacity: 1;
+  color: rgb(211 212 213 / var(--tw-text-opacity));
+}
+
 .accent-\[\#009fd9\] {
   accent-color: #009fd9;
 }
@@ -1716,6 +1725,10 @@ html {
 
   .sm\:mt-2 {
     margin-top: 0.5rem;
+  }
+
+  .sm\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .sm\:block {
@@ -1923,5 +1936,9 @@ html {
 
   .lg\:pt-6 {
     padding-top: 1.5rem;
+  }
+
+  .lg\:pl-4 {
+    padding-left: 1rem;
   }
 }
